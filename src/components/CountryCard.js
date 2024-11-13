@@ -5,12 +5,12 @@ const CountryCard = ({country}) => {
 	return (
 		<Link
 			to={`/country/${country.cca3}`}
-			className="block bg-white dark:bg-dark-blue dark:text-white shadow-md p-0"
+			className="block bg-white dark:bg-dark-blue dark:text-white shadow-md p-0 mb-16 rounded-t-lg "
 		>
 			<img
 				src={country.flags.png}
 				alt={`${country.name.common} flag`}
-				className="w-full h-44 object-cover rounded-t-lg  "
+				className="w-full h-44 object-cover rounded-t-lg"
 			/>
 			<div className="m-6">
 				<h2 className="font-bold text-xl my-4">{country.name.common}</h2>

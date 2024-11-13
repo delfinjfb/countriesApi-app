@@ -20,14 +20,14 @@ const Home = () => {
 		.filter(country => region === "" || country.region === region);
 
 	return (
-		<main className="container dark-blue mx-auto p-4 dark:bg-very-dark-blue">
+		<main className="container dark-blue mx-auto p-4 ">
 			<SearchBar
 				searchQuery={searchQuery}
 				setSearchQuery={setSearchQuery}
 				region={region}
 				setRegion={setRegion}
 			/>
-			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 dark:bg-dark-blue">
+			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
 				{filteredCountries.map(country => (
 					<CountryCard key={country.cca3} country={country} />
 				))}
