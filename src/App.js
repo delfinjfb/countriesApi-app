@@ -1,6 +1,6 @@
-// src/App.js
 import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HelmetProvider} from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import CountryDetail from "./pages/CountryDetail";
@@ -9,7 +9,6 @@ const App = () => {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		// Load saved theme from localStorage
 		const savedTheme = localStorage.getItem("theme");
 		if (savedTheme === "dark") {
 			setDarkMode(true);
@@ -29,15 +28,17 @@ const App = () => {
 	};
 
 	return (
-		<div className={darkMode ? "dark" : ""}>
-			<Router>
-				<Navbar toggleDarkMode={toggleDarkMode} mode={darkMode} />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/country/:countryCode" element={<CountryDetail />} />
-				</Routes>
-			</Router>
-		</div>
+		<HelmetProvider>
+			<div className={darkMode ? "dark" : ""}>
+				<Router>
+					<Navbar toggleDarkMode={toggleDarkMode} mode={darkMode} />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/country/:countryCode" element={<CountryDetail />} />
+					</Routes>
+				</Router>
+			</div>
+		</HelmetProvider>
 	);
 };
 
