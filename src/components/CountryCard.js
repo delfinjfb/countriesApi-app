@@ -5,7 +5,7 @@ const CountryCard = ({country}) => {
 	return (
 		<Link
 			to={`/country/${country.cca3}`}
-			className="block bg-white dark:bg-dark-blue shadow-md p-0"
+			className="block bg-white dark:bg-dark-blue dark:text-white shadow-md p-0"
 		>
 			<img
 				src={country.flags.png}
