@@ -1,8 +1,9 @@
 // src/pages/CountryDetail.js
 import {useParams, Link, useNavigate} from "react-router-dom";
 import {useState, useEffect} from "react";
+import {Helmet} from "react-helmet-async";
 import {fetchCountryBycode} from "../utils/api";
-import data from "../assets/data.json"; // Fallback data
+import data from "../assets/data.json";
 
 const CountryDetail = () => {
 	const {countryCode} = useParams();
@@ -50,6 +51,14 @@ const CountryDetail = () => {
 
 	return (
 		<main className="container mx-auto p-4">
+			<Helmet>
+				<title>{country.name.common} - REST Countries</title>{" "}
+				{/* Dynamic title */}
+				<meta
+					name="description"
+					content={`Details about ${country.name.common}`}
+				/>
+			</Helmet>
 			{/* Back button */}
 			<button onClick={() => navigate(-1)} className="btn mb-8">
 				← Back
