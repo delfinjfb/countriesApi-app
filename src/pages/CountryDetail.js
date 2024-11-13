@@ -50,7 +50,7 @@ const CountryDetail = () => {
 	};
 
 	return (
-		<main className="container mx-auto p-4">
+		<main className="container mx-auto p-4 dark:text-white">
 			<Helmet>
 				<title>{country.name.common} - REST Countries</title>{" "}
 				{/* Dynamic title */}
@@ -60,7 +60,10 @@ const CountryDetail = () => {
 				/>
 			</Helmet>
 			{/* Back button */}
-			<button onClick={() => navigate(-1)} className="btn mb-8">
+			<button
+				onClick={() => navigate(-1)}
+				className="btn mb-8 rounded shadow-custom px-4"
+			>
 				← Back
 			</button>
 
@@ -126,7 +129,7 @@ const CountryDetail = () => {
 										<Link
 											to={`/country/${country.borders[index]}`}
 											key={index}
-											className="bg-gray-200 px-4 py-2 rounded shadow-md"
+											className="px-4 py-2 rounded shadow-md dark:bg-dark-blue"
 										>
 											{borderCountry}
 										</Link>
