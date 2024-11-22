@@ -4,6 +4,7 @@ import {HelmetProvider} from "react-helmet-async";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import CountryDetail from "./pages/CountryDetail";
+import Matomo from './utils/Matomo';
 
 const App = () => {
 	const [darkMode, setDarkMode] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
 
 	return (
 		<HelmetProvider>
+			<Matomo />
 			<div className={darkMode ? "dark" : ""}>
 				<Router>
 					<Navbar toggleDarkMode={toggleDarkMode} mode={darkMode} />
