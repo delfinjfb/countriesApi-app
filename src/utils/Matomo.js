@@ -17,6 +17,7 @@ const Matomo = () => {
 		_paq.push(["trackPageView"]);
 		_paq.push(["enableLinkTracking"]);
 		_paq.push(["disableCookies"]);
+		_paq.push(["setCustomUrl", "https://countries-api-delfin.vercel.app/"]);
 
 		// Set tracker URL and site ID
 		const u = "https://delfinowebsite.matomo.cloud/";
